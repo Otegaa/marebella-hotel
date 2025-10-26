@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon_io /apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon_io /favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon_io /favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon_io /site.webmanifest" />
+    <script
+      src="https://kit.fontawesome.com/68aea0d1de.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>MareBella Hotel</title>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header>
+      <nav>
+        <a href="homepage.html" class="title-container">
+          <img
+            src="/images/Logo Main.png"
+            alt="MareBella logo"
+            class="logo-img"
+          />
+          <span class="logo-name">MareBella</span>
+        </a>
+
+        <ul class="nav-links">
+          <li class="nav-link">
+            <a href="homepage.html">Home</a>
+          </li>
+          <li class="nav-link">
+            <a href="rooms.html" class="current-page" aria-current="page"
+              >Rooms & Suites</a
+            >
+          </li>
+          <li class="nav-link">
+            <a href="wireframes.html">WireFrames</a>
+          </li>
+        </ul>
+
+        <a href="#" class="btn-book-desktop">Book Now</a>
+
+        <!-- Hamburger for mobile -->
+        <button
+          class="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Links for mobile -->
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+          <ul>
+            <li>
+              <a href="homepage.html">Home</a>
+            </li>
+            <li>
+              <a href="rooms.html">Rooms & Suites</a>
+            </li>
+            <li>
+              <a href="wireframes.html">WireFrames</a>
+            </li>
+            <li><a href="#" class="btn-book-mobile">Book Now</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero section -->
+      <section class="rooms-hero-section-container">
+        <h1>Rooms & Suites</h1>
+        <p>From cozy rooms to lavish suites, find your perfect stay</p>
+      </section>
+
+      <section class="room-amenities">
+        <div class="room-amenity">
+          <i class="fa-solid fa-wifi"></i>
+          <span>High-Speed Wifi</span>
+        </div>
+        <div class="room-amenity">
+          <i class="fa-solid fa-tv"></i>
+          <span>Smart TV</span>
+        </div>
+        <div class="room-amenity">
+          <i class="fa-solid fa-mug-hot"></i>
+          <span>Premium Coffee</span>
+        </div>
+        <div class="room-amenity">
+          <i class="fa-solid fa-tablet-screen-button"></i>
+          <span>In-House tablets</span>
+        </div>
+      </section>
+
+      <section class="room-cards-container">
+        <article class="room-card-box">
+          <img
+            src="/images/room-1.jpg"
+            alt="Classic Mediterranean Twin room with two beds, modern desk and elegant decor"
+            loading="lazy"
+          />
+          <h3>Classic Mediterranean Twin</h3>
+          <p>
+            <span class="card-text-mobile"
+              >Perfect for families featuring two comfortable beds, marble
+              bathroom, and authentic Greek design</span
+            >
+          </p>
+          <p>
+            <span class="card-text-desktop"
+              >Perfect for families or friends traveling together, this
+              elegantly appointed room features two comfortable beds dressed in
+              premium Egyptian cotton linens. The marble bathroom includes a
+              refreshing rain shower, while the private balcony offers peaceful
+              garden views. Authentic Greek design elements blend seamlessly
+              with modern conveniences for a comfortable and memorable
+              stay.</span
+            >
+          </p>
+          <div class="properties-box">
+            <p>📐 32 m²</p>
+            <p>👥 Up to two guests</p>
+          </div>
+          <div class="features-container">
+            <h4>Room Features:</h4>
+            <ul>
+              <li>✅ Twin beds</li>
+              <li>✅ Private balcony</li>
+              <li>✅ Daily housekeeping</li>
+              <li>✅ Minibar</li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="price-and-book-box">
+            <p class="price">€280<span class="period">/night</span></p>
+            <a
+              href="#"
+              class="view-details"
+              aria-label="Book Room for Classic Mediterranean Twin room"
+              >Book this Room</a
+            >
+          </div>
+        </article>
+
+        <article class="room-card-box">
+          <img
+            src="/images/room-2.jpg"
+            alt="A bedroom with view of the ocean"
+            loading="lazy"
+          />
+          <h3>Premium Sea View Suite</h3>
+          <p>
+            <span class="card-text-mobile"
+              >Wake to ocean views from this lovely room featuring king bed,
+              marble bathroom, and private balcony</span
+            >
+          </p>
+          <p>
+            <span class="card-text-desktop"
+              >Experience unforgettable sunsets from your spacious private
+              balcony overlooking the endless blue horizon. This sophisticated
+              suite offers a premium king-size bed, separate seating area, and a
+              luxurious marble bathroom complete with soaking tub and rain
+              shower for ultimate relaxation.</span
+            >
+          </p>
+          <div class="properties-box">
+            <p>📐 45 m²</p>
+            <p>👥 Up to two guests</p>
+          </div>
+          <div class="features-container">
+            <h4>Room Features:</h4>
+            <ul>
+              <li>✅ King size bed</li>
+              <li>✅ Private balcony</li>
+              <li>✅ Daily housekeeping</li>
+              <li>✅ Minibar</li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="price-and-book-box">
+            <p class="price">€380<span class="period">/night</span></p>
+            <a
+              href="#"
+              class="view-details"
+              aria-label="Book Room for Premium Sea View Suite"
+              >Book this Room</a
+            >
+          </div>
+        </article>
+      </section>
+
+      <section class="booking-info">
+        <h2>Booking Information</h2>
+        <div class="booking-info-group">
+          <h5>Check-in & check-out</h5>
+          <ul>
+            <li>Check-in: From 3:00 PM</li>
+            <li>Check-out: Until 12:00 PM</li>
+            <li>Early check-in available upon request</li>
+            <li>Express check-in for suite guests</li>
+          </ul>
+        </div>
+        <div class="booking-info-group">
+          <h5>Cancellation Policy</h5>
+          <ul>
+            <li>Free cancellation up to 7 days before arrival</li>
+            <li>50% charge for cancellations 3-7 days before</li>
+            <li>Full charge for cancellations within 3 days</li>
+            <li>Flexible rates available for extended stays</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h5>Quick links</h5>
+          <ul>
+            <li><a href="homepage.html" class="link">Home</a></li>
+            <li><a href="rooms.html" class="link">Rooms & Suites</a></li>
+            <li><a href="wireframes.html" class="link">WireFrames</a></li>
+            <li><a href="credits.html" class="link">Credits</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h5>Contact us</h5>
+          <address>
+            <a href="#" class="link">Tel : 69 8234675612</a>
+            <a href="#" class="link">info@marebella.gr</a>
+          </address>
+        </div>
+
+        <div class="footer-column">
+          <h5>Follow us</h5>
+          <div class="social-icons">
+            <a href="#" aria-label="Visit our Facebook page" class="social-icon"
+              ><i class="fa-brands fa-facebook" aria-hidden="true"></i
+            ></a>
+
+            <a
+              href="#"
+              aria-label="Visit our Instagram page"
+              class="social-icon"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+
+            <a href="#" aria-label="Visit our Telegram page" class="social-icon"
+              ><i class="fa-brands fa-telegram" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <p>&copy 2025 MareBella Santorini. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

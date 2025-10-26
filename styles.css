@@ -166,6 +166,7 @@ nav {
 }
 
 /* Hero */
+
 .hero-section-container {
   background-image: linear-gradient(
       135deg,
@@ -176,13 +177,6 @@ nav {
 
   /* Photo by <a href="https://unsplash.com/@raph_lopes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Raphael Lopes</a> (2021) on <a href="https://unsplash.com/photos/white-plastic-chairs-on-gray-concrete-dock-during-daytime-pABchpCB8ak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> (Accessed: on October 20, 2025) */
 
-  background-color: #2563eb;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 60rem;
-  height: 95vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -190,7 +184,35 @@ nav {
   gap: 8rem;
 }
 
-.hero-content p {
+.rooms-hero-section-container {
+  background-image: linear-gradient(
+      135deg,
+      rgba(30, 58, 138, 0.6),
+      rgba(30, 64, 175, 0.6)
+    ),
+    url('/images/rooms-page-hero.jpg');
+
+  /* Photo by <a href="https://unsplash.com/@aalolens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aalo Lens</a> (2025) on <a href="https://unsplash.com/photos/luxurious-bedroom-with-modern-decor-and-large-windows-Xph_EJ-22vE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> (Accessed: on October 21, 2025)*/
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-section-container,
+.rooms-hero-section-container {
+  background-color: #2563eb;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60rem;
+  height: 95vh;
+}
+
+.hero-content p,
+.rooms-hero-section-container p {
   color: #ffffff;
   font-size: 2rem;
   text-align: center;
