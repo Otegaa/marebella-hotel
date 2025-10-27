@@ -156,13 +156,65 @@ nav {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Mobile nav styling */
+
 .hamburger {
   display: none;
   visibility: hidden;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  color: #1f2937;
+  font-size: 2.4rem;
 }
 
 .mobile-menu {
   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  z-index: 99;
+}
+
+.mobile-menu[aria-hidden='false'] {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  color: #1f2937;
+  text-decoration: none;
+}
+
+/* Overlay for the menu btn */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+}
+
+.mobile-menu-overlay[aria-hidden='false'] {
+  display: block;
 }
 
 /* Hero */
@@ -271,20 +323,6 @@ nav {
   padding: 0 2rem;
 }
 
-/* @media (max-width: 768px) {
-  .desktop-text {
-    display: none;
-  }
-
-  .mobile-text {
-    display: inline;
-  }
-
-  .intro-desc {
-    font-size: 1.4rem;
-  }
-} */
-
 /* Amenities */
 .amenities-container {
   padding: 6rem 10rem;
@@ -347,23 +385,6 @@ nav {
   font-size: 1.6rem;
   color: #6b7280;
   line-height: 1.6;
-}
-
-@media (max-width: 992px) {
-  .amenities-view-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .amenities-view-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .amenities-container {
-    padding: 4rem 2rem;
-  }
 }
 
 .accommodations-container {
@@ -561,49 +582,6 @@ footer {
   color: #9ca3af;
 }
 
-/* Responsive - Tablet */
-@media (max-width: 992px) {
-  footer {
-    padding: 4rem 3rem 2rem;
-  }
-
-  .footer-columns {
-    gap: 3rem;
-  }
-}
-
-/* Tablets */
-@media (max-width: 992px) {
-  footer {
-    padding: 4rem 3rem 2rem;
-  }
-
-  .footer-columns {
-    gap: 3rem;
-  }
-}
-
-/* Responsive - Mobile */
-@media (max-width: 768px) {
-  footer {
-    padding: 3rem 2rem 2rem;
-  }
-
-  .footer-columns {
-    flex-direction: column;
-    gap: 3rem;
-    align-items: flex-start;
-  }
-
-  .footer-column {
-    width: 100%;
-  }
-
-  .footer-divider {
-    margin: 3rem 0;
-  }
-}
-
 /* Rooms page */
 .room-amenities {
   background-color: #ffffff;
@@ -628,15 +606,6 @@ footer {
 
 .room-amenity span {
   font-weight: 500;
-}
-
-@media (max-width: 768px) {
-  .room-amenities {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    padding: 3rem 2rem;
-  }
 }
 
 .room-cards-container {
@@ -749,62 +718,6 @@ footer {
   color: #6b7280;
 }
 
-@media (max-width: 768px) {
-  .room-cards-container {
-    padding: 3rem 1.5rem;
-    gap: 2rem;
-  }
-
-  .room-card-box {
-    flex-direction: column;
-  }
-
-  .room-card-box img {
-    flex: none;
-    width: 100%;
-    height: 25rem;
-    min-height: auto;
-    max-height: none;
-  }
-
-  .room-content {
-    padding: 2rem;
-  }
-
-  .room-content h3 {
-    font-size: 2rem;
-  }
-
-  .card-text-mobile {
-    display: block;
-  }
-
-  .card-text-desktop {
-    display: none;
-  }
-
-  .room-info {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .price {
-    font-size: 2.4rem;
-  }
-
-  .price-and-book-box {
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: stretch;
-  }
-
-  .book-room-btn,
-  .view-details {
-    width: 100%;
-    text-align: center;
-  }
-}
-
 .booking-info-container {
   background-color: #ffffff;
   padding: 3rem 0;
@@ -841,4 +754,320 @@ footer {
   left: 0;
   color: #2563eb;
   font-weight: bold;
+}
+
+/* Mobile Responsiveness */
+
+@media (max-width: 768px) {
+  /* General styles */
+  body {
+    padding-top: 0;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  /* Navigation */
+  nav {
+    height: 6rem;
+    padding: 1rem 2rem;
+    position: relative;
+  }
+
+  .btn-book-desktop,
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    visibility: visible;
+  }
+
+  .logo-img {
+    width: 2.5rem;
+  }
+
+  .logo-name {
+    font-size: 1.8rem;
+  }
+
+  /* Hero section (Homepage) */
+  .hero-section-container {
+    min-height: 70vh;
+    padding: 2rem 1.5rem;
+    gap: 5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+  }
+
+  .hero-btns .explore-rooms {
+    display: none;
+  }
+
+  .hero-btns .reserve-now {
+    margin-right: 0;
+    width: 100%;
+    max-width: 28rem;
+    text-align: center;
+  }
+
+  /* Hero section (Rooms page) */
+  .rooms-hero-section-container {
+    min-height: 50vh;
+    padding: 3rem 2rem;
+    gap: 1rem;
+  }
+
+  .rooms-hero-section-container h1 {
+    font-size: 2.8rem;
+  }
+
+  .rooms-hero-section-container p {
+    font-size: 1.6rem;
+    padding: 0 2rem;
+  }
+
+  /* Introduction */
+  .introduction-container {
+    padding: 4rem 2rem;
+  }
+
+  .desktop-text {
+    display: none;
+  }
+
+  .mobile-text {
+    display: block;
+    text-align: center;
+  }
+
+  .intro-desc {
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+
+  /* Amenities section */
+  .amenities-container {
+    padding: 4rem 2rem;
+  }
+
+  .intro-box {
+    margin-bottom: 1rem;
+  }
+
+  .section-intro-desc {
+    font-size: 1.6rem;
+    padding: 0 2rem;
+  }
+
+  .amenities-view-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+
+  .amenities-view img {
+    height: 25rem;
+  }
+
+  .amenity-desc-box {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Accommodations section (Homepage) */
+  .accommodations-container {
+    padding: 4rem 2rem;
+  }
+
+  .rooms-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+
+  .room-card img {
+    height: 25rem;
+  }
+
+  .room-desc-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .price-and-book-box {
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .price {
+    font-size: 2rem;
+  }
+
+  .view-room-btn {
+    margin-top: 2rem;
+  }
+
+  .view-room-btn a {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.6rem;
+  }
+
+  /* Room amenities (Rooms Page) */
+  .room-amenities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    padding: 3rem 2rem;
+  }
+
+  .room-amenity {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .room-amenity i {
+    font-size: 3rem;
+  }
+
+  .room-amenity span {
+    font-size: 1.4rem;
+  }
+
+  /* Rooms Cards (Rooms Page) */
+  .room-cards-container {
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
+
+  .room-card-box {
+    flex-direction: column;
+  }
+
+  .room-card-box img {
+    flex: none;
+    width: 100%;
+    height: 25rem;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .room-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .room-content h3 {
+    font-size: 2rem;
+  }
+
+  .card-text-mobile {
+    display: block;
+  }
+
+  .card-text-desktop {
+    display: none;
+  }
+
+  .room-info {
+    flex-direction: column;
+    gap: 0.7rem;
+    margin: 1rem 0;
+  }
+
+  .features-container {
+    margin-top: 0;
+  }
+
+  .features-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .features-list li {
+    font-size: 1.5rem;
+  }
+
+  .book-room-btn {
+    padding: 1.2rem;
+    font-size: 1.6rem;
+  }
+
+  /* Booking Info section */
+  .booking-info-container {
+    padding: 4rem 2rem;
+  }
+
+  .booking-info-container h2 {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
+
+  .booking-info {
+    flex-direction: column;
+    padding: 0;
+    gap: 3rem;
+    min-width: auto;
+  }
+
+  .booking-info-group {
+    padding: 0;
+  }
+
+  .booking-info-group h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .booking-info-group li {
+    font-size: 1.5rem;
+    padding-left: 2.5rem;
+  }
+
+  /* Footer */
+  footer {
+    padding: 3rem 2rem 2rem;
+  }
+
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .footer-column {
+    width: 100%;
+    text-align: center;
+  }
+
+  h5 {
+    font-size: 1.8rem;
+  }
+
+  .footer-columns .link {
+    font-size: 1.5rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-divider {
+    margin: 3rem 0;
+  }
+
+  .footer-bottom p {
+    font-size: 1.5rem;
+  }
 }
