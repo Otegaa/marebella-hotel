@@ -1221,3 +1221,140 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+/* Credits page */
+.credits-container {
+  padding: 6rem 4rem;
+  background-color: #ffffff;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.credits-content {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.credits-intro {
+  font-size: 1.8rem;
+  color: #4b5563;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.unsplash-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.unsplash-link:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+.credits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.credit-item {
+  background-color: #f9fafb;
+  padding: 2.5rem;
+  border-radius: 0.8rem;
+  border-left: 4px solid #2563eb;
+  transition: all 0.3s ease;
+}
+
+.credit-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.credit-item h3 {
+  font-size: 1.8rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.credit-item p {
+  font-size: 1.5rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.credit-item a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.credit-item a:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+.year {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.credits-footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #f9fafb;
+  border-radius: 0.8rem;
+  border-top: 3px solid #2563eb;
+}
+
+.credits-footer p {
+  font-size: 1.6rem;
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+/* Credits page mobile */
+@media (max-width: 768px) {
+  .credits-container {
+    padding: 4rem 2rem;
+  }
+
+  .credits-content {
+    padding: 3rem 0;
+  }
+
+  .credits-intro {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+  }
+
+  .credits-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .credit-item {
+    padding: 2rem;
+  }
+
+  .credit-item h3 {
+    font-size: 1.7rem;
+  }
+
+  .credit-item p {
+    font-size: 1.4rem;
+  }
+
+  .credits-footer {
+    padding: 2rem 1.5rem;
+  }
+
+  .credits-footer p {
+    font-size: 1.5rem;
+  }
+}
