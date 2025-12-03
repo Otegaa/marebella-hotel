@@ -225,7 +225,7 @@ nav {
       rgba(37, 99, 235, 0.3),
       rgba(6, 182, 212, 0.3)
     ),
-    url('/images/hero-img.jpg');
+    url('../images/hero-img.jpg');
 
   /* Photo by <a href="https://unsplash.com/@raph_lopes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Raphael Lopes</a> (2021) on <a href="https://unsplash.com/photos/white-plastic-chairs-on-gray-concrete-dock-during-daytime-pABchpCB8ak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> (Accessed: on October 20, 2025) */
 
@@ -242,7 +242,7 @@ nav {
       rgba(30, 58, 138, 0.6),
       rgba(30, 64, 175, 0.6)
     ),
-    url('/images/rooms-page-hero.jpg');
+    url('../images/rooms-page-hero.jpg');
 
   /* Photo by <a href="https://unsplash.com/@aalolens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aalo Lens</a> (2025) on <a href="https://unsplash.com/photos/luxurious-bedroom-with-modern-decor-and-large-windows-Xph_EJ-22vE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> (Accessed: on October 21, 2025)*/
 

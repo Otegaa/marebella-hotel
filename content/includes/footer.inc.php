@@ -7,18 +7,18 @@
      <div class="footer-column">
        <h5>Quick links</h5>
        <ul>
-         <li><a href="../index.php" class="link">Home</a></li>
-         <li><a href="../rooms.php" class="link">Rooms & Suites</a></li>
+         <li><a href="homepage.php" class="link">Home</a></li>
+         <li><a href="rooms.php" class="link">Rooms & Suites</a></li>
 
          <?php if ($isLoggedIn): ?>
-           <li><a href="../my-bookings.php" class="link">My Bookings</a></li>
+           <li><a href="my-bookings.php" class="link">My Bookings</a></li>
          <?php else: ?>
-           <li><a href="../login.php" class="link">Login</a></li>
-           <li><a href="../register.php" class="link">Register</a></li>
+           <li><a href="login.php" class="link">Login</a></li>
+           <li><a href="register.php" class="link">Register</a></li>
          <?php endif; ?>
 
-         <li><a href="../wireframes.html" class="link">Wireframes</a></li>
-         <li><a href="../credits.html" class="link">Credits</a></li>
+         <li><a href="wireframes.php" class="link">Wireframes</a></li>
+         <li><a href="credits.php" class="link">Credits</a></li>
        </ul>
      </div>
 

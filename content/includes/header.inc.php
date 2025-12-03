@@ -12,37 +12,35 @@ $isLoggedIn = isset($_SESSION['user_id']);
     <!-- Desktop Navigation -->
     <ul class="nav-links">
       <li class="nav-link">
-        <a href="../homepage.php">Home</a>
+        <a href="homepage.php">Home</a>
       </li>
       <li class="nav-link">
-        <a href="../rooms.php">Rooms & Suites</a>
+        <a href="rooms.php">Rooms & Suites</a>
       </li>
       <li class="nav-link">
-        <a href="../wireframes.html">Wireframes</a>
+        <a href="wireframes.php">Wireframes</a>
       </li>
 
       <?php if ($isLoggedIn): ?>
         <li class="nav-link">
-          <a href="../my-bookings.php">My Bookings</a>
+          <a href="my-bookings.php">My Bookings</a>
         </li>
         <li class="nav-link">
-          <a href="logout.inc.php">Logout</a>
+          <a href="includes/logout.inc.php">Logout</a>
         </li>
       <?php else: ?>
         <li class="nav-link">
-          <a href="../login.php">Login</a>
+          <a href="login.php">Login</a>
         </li>
         <li class="nav-link">
-          <a href="../register.php">Register</a>
+          <a href="register.php">Sign up</a>
         </li>
       <?php endif; ?>
     </ul>
 
     <!-- Book Now Button -->
-    <?php if ($isLoggedIn): ?>
-      <a href="../rooms.php" class="btn-book-desktop">Book Now</a>
-    <?php else: ?>
-      <a href="../login.php" class="btn-book-desktop">Book Now</a>
+    <?php if (!$isLoggedIn): ?>
+      <a href="login.php" class="btn-book-desktop">Book Now</a>
     <?php endif; ?>
 
     <!-- Mobile Hamburger -->
@@ -53,16 +51,17 @@ $isLoggedIn = isset($_SESSION['user_id']);
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
       <ul>
-        <li><a href="../homepage.php">Home</a></li>
-        <li><a href="../rooms.php">Rooms & Suites</a></li>
-        <li><a href="../wireframes.html">Wireframes</a></li>
+        <li><a href="homepage.php">Home</a></li>
+        <li><a href="rooms.php">Rooms & Suites</a></li>
+        <li><a href="wireframes.php">Wireframes</a></li>
 
         <?php if ($isLoggedIn): ?>
-          <li><a href="../my-bookings.php">My Bookings</a></li>
+          <li><a href="my-bookings.php">My Bookings</a></li>
           <li><a href="logout.inc.php">Logout</a></li>
         <?php else: ?>
-          <li><a href="../login.php">Login</a></li>
-          <li><a href="../register.php">Register</a></li>
+          <li><a href="login.php">Login</a></li>
+          <li><a href="register.php">Register</a></li>
+          <li><a href="login.php" class="btn-book-mobile">Book Now</a></li>
         <?php endif; ?>
       </ul>
     </div>

@@ -1,5 +1,16 @@
 <?php
 require_once 'includes/config_session.inc.php';
+require_once 'includes/dbh.inc.php';
+
+try {
+  $query = "SELECT * FROM accommodation ORDER BY price_per_night LIMIT 2;";
+  $stmt = $pdo->prepare($query);
+  $stmt->execute();
+
+  $rooms = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+  die("Query failed: " . $e->getMessage());
+}
 ?>
 
 <!DOCTYPE html>
@@ -8,22 +19,22 @@ require_once 'includes/config_session.inc.php';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/assets/stylesheets/styles.css" />
+  <link rel="stylesheet" href="../assets/stylesheets/styles.css" />
   <link
     rel="apple-touch-icon"
     sizes="180x180"
-    href="/favicon_io/apple-touch-icon.png" />
+    href="../assets/favicon_io/apple-touch-icon.png" />
   <link
     rel="icon"
     type="image/png"
     sizes="32x32"
-    href="/favicon_io/favicon-32x32.png" />
+    href="../assets/favicon_io/favicon-32x32.png" />
   <link
     rel="icon"
     type="image/png"
     sizes="16x16"
-    href="/favicon_io/favicon-16x16.png" />
-  <link rel="manifest" href="/favicon_io/site.webmanifest" />
+    href="../assets/favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="../assets/favicon_io/site.webmanifest" />
   <script
     src="https://kit.fontawesome.com/68aea0d1de.js"
     crossorigin="anonymous"></script>
@@ -43,8 +54,8 @@ require_once 'includes/config_session.inc.php';
         <p>Experience Italian elegance on Greece's most beautiful shores</p>
       </div>
       <div class="hero-btns">
-        <a href="rooms.html" class="reserve-now">📅 Reserve Now</a>
-        <a href="rooms.html" class="explore-rooms">Explore Rooms</a>
+        <a href="rooms.php" class="reserve-now">📅 Reserve Now</a>
+        <a href="rooms.php" class="explore-rooms">Explore Rooms</a>
       </div>
     </section>
 
@@ -75,11 +86,11 @@ require_once 'includes/config_session.inc.php';
       <div class="amenities-view-container">
         <article class="amenities-view">
           <img
-            src="/images/infinity-pool.jpg"
+            src="../assets/images/infinity-pool.jpg"
             alt="Green leafed plant near white concrete post"
             loading="lazy" />
 
-          <!-- Photo by <a href="https://unsplash.com/@bigtinybelly?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">big.tiny.belly</a> (2018) on <a href="https://unsplash.com/photos/green-leafed-plant-near-white-concrete-post-XtnNrQYC7ts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> (Accessed: on October 20, 2025) -->
+
 
           <div class="amenity-desc-box">
             <h4>Infinity Pool Vista</h4>
@@ -89,11 +100,10 @@ require_once 'includes/config_session.inc.php';
 
         <article class="amenities-view">
           <img
-            src="/images/wellness&beauty.jpg"
+            src="../assets/images/wellness&beauty.jpg"
             alt="A room with a glass door that has a plant in it"
             loading="lazy" />
 
-          <!-- Photo by <a href="https://unsplash.com/@birkenwald?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Birk Enwald</a> (2023) on <a href="https://unsplash.com/photos/a-room-with-a-glass-door-that-has-a-plant-in-it-znZXwcHdKwM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> (Accessed: on October 20, 2025) -->
 
           <div class="amenity-desc-box">
             <h4>Wellness & Beauty</h4>
@@ -105,11 +115,11 @@ require_once 'includes/config_session.inc.php';
 
         <article class="amenities-view">
           <img
-            src="/images/rooftop-restaurant.jpg"
+            src="../assets/images/rooftop-restaurant.jpg"
             alt="Brown wooden table and chairs set"
             loading="lazy" />
 
-          <!-- Photo by <a href="https://unsplash.com/@brandsandpeople?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Brands&People</a> (2021) on <a href="https://unsplash.com/photos/brown-wooden-table-and-chairs-set-en-u6xqnbsg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> (Accessed: on October 21, 2025) -->
+
 
           <div class="amenity-desc-box">
             <h4>Rooftop Restaurant</h4>
@@ -131,62 +141,42 @@ require_once 'includes/config_session.inc.php';
       </div>
 
       <div class="rooms-container">
-        <article class="room-card">
-          <img
-            src="/images/room-1.jpg"
-            alt="Classic Mediterranean Twin room with two beds, modern desk and elegant decor"
-            loading="lazy" />
+        <?php foreach ($rooms as $room): ?>
+          <article class="room-card">
+            <img
+              src="<?php echo htmlspecialchars($room["session_imagepath"]); ?>"
+              alt="<?php echo htmlspecialchars($room["accommodation_name"]); ?>"
+              loading="lazy" />
 
-          <!-- Photo by <a href="https://unsplash.com/@oning?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">oning</a> (2024) on  <a href="https://unsplash.com/photos/a-hotel-room-with-two-beds-and-a-desk-gdJpDTU85ek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> (Accessed: on October 21, 2025) -->
+            <div class="room-desc-box">
+              <h3><?php echo htmlspecialchars($room["accommodation_name"]); ?></h3>
+              <p class="intro">
+                <?php
+                $desc = $room["description"];
+                if (strlen($desc) > 150) {
+                  echo htmlspecialchars(substr($desc, 0, 200)) . '...';
+                } else {
+                  echo htmlspecialchars($desc);
+                }
+                ?>
+              </p>
+            </div>
 
-          <div class="room-desc-box">
-            <h3>Classic Mediterranean Twin</h3>
-            <p class="intro">
-              Twin beds, timeless Mediterranean style, and every modern
-              comfort
-            </p>
-          </div>
+            <hr class="room-divider" />
 
-          <hr class="room-divider" />
-
-          <div class="price-and-book-box">
-            <p class="price">€280/night</p>
-            <a
-              href="rooms.html"
-              class="view-details"
-              aria-label="View details for Classic Mediterranean Twin room">View details</a>
-          </div>
-        </article>
-
-        <article class="room-card">
-          <img
-            src="/images/room-2.jpg"
-            alt="A bedroom with view of the ocean"
-            loading="lazy" />
-
-          <!-- Photo by <a href="https://unsplash.com/@traveleroohlala?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Meg von Haartman</a> (2022) on <a href="https://unsplash.com/photos/a-bedroom-with-a-view-of-the-ocean-b_tr2-t7AaI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> (Accessed: on October 21, 2025)-->
-
-          <div class="room-desc-box">
-            <h3>Premium Sea View Suite</h3>
-            <p class="intro">
-              Wake to the sea’s embrace from your balcony and king suite
-            </p>
-          </div>
-
-          <hr class="room-divider" />
-
-          <div class="price-and-book-box">
-            <p class="price">€380/night</p>
-            <a
-              href="rooms.html"
-              class="view-details"
-              aria-label="View details for Premium Sea View Suite">View details</a>
-          </div>
-        </article>
+            <div class="price-and-book-box">
+              <p class="price"> €<?php echo number_format($room["price_per_night"], 2) ?>/night</p>
+              <a
+                href="room-details.php?id=<?php echo $room["accommodationID"]; ?>"
+                class="view-details"
+                aria-label="View details for <?php echo htmlspecialchars($room['accommodation_name']); ?>">View details </a>
+            </div>
+          </article>
+        <?php endforeach; ?>
       </div>
 
       <div class="view-room-btn">
-        <a href="rooms.html">View all rooms & Suites</a>
+        <a href="./rooms.php">View all rooms & Suites</a>
       </div>
     </section>
   </main>
