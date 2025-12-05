@@ -33,7 +33,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
           <a href="login.php">Login</a>
         </li>
         <li class="nav-link">
-          <a href="register.php">Sign up</a>
+          <a href="signup.php">Sign up</a>
         </li>
       <?php endif; ?>
     </ul>
@@ -60,7 +60,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
           <li><a href="logout.inc.php">Logout</a></li>
         <?php else: ?>
           <li><a href="login.php">Login</a></li>
-          <li><a href="register.php">Register</a></li>
+          <li><a href="signup.php">Sign up</a></li>
           <li><a href="login.php" class="btn-book-mobile">Book Now</a></li>
         <?php endif; ?>
       </ul>
