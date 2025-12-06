@@ -35,80 +35,111 @@ $signup_data = getSignupData();
 
 <body>
   <!-- header -->
-  <?php require_once 'includes/header.inc.php' ?>
+  <?php require_once 'includes/header.inc.php'; ?>
 
-  <?php
-  displaySignupErrors();
-  ?>
+  <main>
+    <div class="form-container">
+      <h2>Create Your Account</h2>
 
-  <form action="includes/signup.inc.php" method="post" novalidate>
-    <label for="firstname">First Name:</label>
-    <input type="text"
-      name="firstname"
-      id="firstname"
-      class=""
-      value="<?php echo htmlspecialchars($signup_data['firstname'] ?? ''); ?>">
+      <?php
+      displaySignupErrors();
+      ?>
 
-    <label for="lastname">Last Name:</label>
-    <input type="text"
-      name="lastname"
-      id="lastname"
-      class=""
-      value="<?php echo htmlspecialchars($signup_data['lastname'] ?? ''); ?>">
+      <form action="includes/signup.inc.php" method="post" novalidate>
 
-    <label for="dob">Date of birth:</label>
-    <input type="date"
-      name="dob" id="dob"
-      class=""
-      value="<?php
-              if (!checkSignupErrors('under_age')) {
-                echo htmlspecialchars($signup_data['dob'] ?? '');
-              } ?>">
+        <div class="form-group">
+          <label for="firstname">First Name<span class="required">*</span></label>
+          <input type="text"
+            name="firstname"
+            id="firstname"
+            class="<?php echo checkSignupErrors('empty_input') ? 'input-error' : ''; ?>"
+            value="<?php echo htmlspecialchars($signup_data['firstname'] ?? ''); ?>">
+        </div>
 
-    <label for="email">Email:</label>
-    <input type="email"
-      name="email"
-      id="email"
-      class=""
-      value="<?php
-              if (!checkSignupErrors('email_registered') && !checkSignupErrors('invalid_email')) {
-                echo htmlspecialchars($signup_data['email'] ?? '');
-              } ?>">
+        <div class="form-group">
+          <label for="lastname">Last Name<span class="required">*</span></label>
+          <input type="text"
+            name="lastname"
+            id="lastname"
+            class="<?php echo checkSignupErrors('empty_input') ? 'input-error' : ''; ?>"
+            value="<?php echo htmlspecialchars($signup_data['lastname'] ?? ''); ?>">
+        </div>
 
-    <label for="username">Username:</label>
-    <input type="text"
-      name="username"
-      id="username"
-      class=""
-      value="<?php
-              if (!checkSignupErrors('username_taken')) {
-                echo htmlspecialchars($signup_data['username'] ?? '');
-              } ?>">
-    <label for="password">Password:</label>
-    <input type="password"
-      name="password"
-      id="password"
-      class=""
-      placeholder="Minimum 8 characters">
+        <div class="form-group">
+          <label for="username">Username<span class="required">*</span></label>
+          <input type="text"
+            name="username"
+            id="username"
+            class="<?php echo checkSignupErrors('username_taken') ? 'input-error' : ''; ?>"
+            value="<?php
+                    if (!checkSignupErrors('username_taken')) {
+                      echo htmlspecialchars($signup_data['username'] ?? '');
+                    }
+                    ?>">
+        </div>
 
+        <div class="form-group">
+          <label for="email">Email<span class="required">*</span></label>
+          <input type="email"
+            name="email"
+            id="email"
+            class="<?php echo checkSignupErrors('email_registered') || checkSignupErrors('invalid_email') ? 'input-error' : ''; ?>"
+            value="<?php
+                    if (!checkSignupErrors('email_registered') && !checkSignupErrors('invalid_email')) {
+                      echo htmlspecialchars($signup_data['email'] ?? '');
+                    }
+                    ?>">
+        </div>
 
-    <label for="phone">Phone:</label>
-    <input type="tel"
-      name="phone"
-      id="phone"
-      class=""
-      value="<?php
-              if (!checkSignupErrors('phone_bad')) {
-                echo htmlspecialchars($signup_data['phone'] ?? '');
-              } ?>">
+        <div class="form-group">
+          <label for="password">Password<span class="required">*</span></label>
+          <input type="password"
+            name="password"
+            id="password"
+            class="<?php echo checkSignupErrors('password_bad') ? 'input-error' : ''; ?>"
+            placeholder="Minimum 8 characters">
+          <span class="form-helper">Use at least 8 characters</span>
+        </div>
 
-    <input type="submit" value="Sign Up">
+        <div class="form-group">
+          <label for="phone">Phone Number<span class="required">*</span></label>
+          <input type="tel"
+            name="phone"
+            id="phone"
+            class="<?php echo checkSignupErrors('phone_bad') ? 'input-error' : ''; ?>"
+            value="<?php
+                    if (!checkSignupErrors('phone_bad')) {
+                      echo htmlspecialchars($signup_data['phone'] ?? '');
+                    }
+                    ?>">
+        </div>
 
-  </form>
+        <div class="form-group">
+          <label for="dob">Date of Birth<span class="required">*</span></label>
+          <input type="date"
+            name="dob"
+            id="dob"
+            class="<?php echo checkSignupErrors('under_age') ? 'input-error' : ''; ?>"
+            max="<?php echo date('Y-m-d', strtotime('-18 years')); ?>"
+            value="<?php
+                    if (!checkSignupErrors('under_age')) {
+                      echo htmlspecialchars($signup_data['dob'] ?? '');
+                    }
+                    ?>">
+          <span class="form-helper">You must be 18 or older</span>
+        </div>
 
+        <input type="submit" value="Sign Up">
+      </form>
+
+      <div class="form-footer">
+        <p>Already have an account? <a href="login.php">Login here</a></p>
+      </div>
+    </div>
+  </main>
 
   <!-- footer -->
-  <?php require_once 'includes/footer.inc.php' ?>
+  <?php require_once 'includes/footer.inc.php'; ?>
 
   <!-- unset -->
   <?php

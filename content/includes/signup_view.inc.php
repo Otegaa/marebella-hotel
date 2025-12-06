@@ -24,9 +24,9 @@ function displaySignupErrors()
 
   $errors = $_SESSION["errors_signup"];
 
-  echo "<div>";
+  echo '<div class="error-box">';
   foreach ($errors as $error) {
-    echo "<p>" . htmlspecialchars($error) . "</p>";
+    echo '<p>• ' . htmlspecialchars($error) . '</p>';
   }
-  echo "</div>";
+  echo '</div>';
 }

@@ -1358,3 +1358,235 @@ footer {
     font-size: 1.5rem;
   }
 }
+
+/* Forms - Login and Signup */
+.form-container {
+  max-width: 50rem;
+  margin: 8rem auto 6rem;
+  padding: 4rem 3rem;
+  background-color: #ffffff;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1f2937;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.8rem;
+}
+
+/* Input Fields */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+input[type='tel'] {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+  color: #1f2937;
+  background-color: #f9fafb;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='date']:focus,
+input[type='tel']:focus {
+  outline: none;
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+input[type='text']:hover,
+input[type='email']:hover,
+input[type='password']:hover,
+input[type='date']:hover,
+input[type='tel']:hover {
+  border-color: #9ca3af;
+}
+
+input::placeholder {
+  color: #9ca3af;
+  font-size: 1.4rem;
+}
+
+input[type='submit'],
+.btn-submit {
+  width: 100%;
+  padding: 1.4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+  margin-top: 1rem;
+}
+
+input[type='submit']:hover,
+.btn-submit:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+input[type='submit']:active,
+.btn-submit:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+/* For error and success messages */
+.error-box {
+  background-color: #fef2f2;
+  border: 2px solid #fecaca;
+  border-left: 4px solid #dc2626;
+  color: #991b1b;
+  padding: 1.5rem 2rem;
+  border-radius: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.error-box p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.error-box p:last-child {
+  margin-bottom: 0;
+}
+
+.success-box {
+  background-color: #f0fdf4;
+  border: 2px solid #bbf7d0;
+  border-left: 4px solid #16a34a;
+  color: #166534;
+  padding: 1.5rem 2rem;
+  border-radius: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.success-box p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+/* Input Error State */
+.input-error {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+/* Form Footer Links */
+.form-footer {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.form-footer p {
+  font-size: 1.5rem;
+  color: #6b7280;
+}
+
+.form-footer a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.form-footer a:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* Form Helper Text */
+.form-helper {
+  font-size: 1.3rem;
+  color: #9ca3af;
+  margin-top: 0.5rem;
+}
+
+/* Input Required Field Indicator */
+.required {
+  color: #dc2626;
+  margin-left: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    margin: 2rem 1.5rem 4rem;
+    padding: 3rem 2rem;
+  }
+
+  .form-container h2 {
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.8rem;
+  }
+
+  .form-group label {
+    font-size: 1.5rem;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='password'],
+  input[type='date'],
+  input[type='tel'] {
+    font-size: 1.6rem;
+    padding: 1.3rem 1.5rem;
+  }
+
+  input[type='submit'],
+  .btn-submit {
+    font-size: 1.7rem;
+    padding: 1.5rem;
+  }
+
+  .error-box,
+  .success-box {
+    padding: 1.3rem 1.5rem;
+  }
+
+  .error-box p,
+  .success-box p {
+    font-size: 1.5rem;
+  }
+
+  .form-footer p {
+    font-size: 1.6rem;
+  }
+}

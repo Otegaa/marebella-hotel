@@ -38,31 +38,43 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-
+  <!-- header -->
   <?php require_once 'includes/header.inc.php'; ?>
 
-  <?php
-  displaySuccessMessage();
-  displayLoginErrors();
-  ?>
+  <main>
+    <div class="form-container">
+      <h2>Login</h2>
 
-  <form action="includes/login.inc.php" method="post">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username">
+      <?php
+      displayLoginErrors();
+      displaySuccessMessage();
+      ?>
 
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
+      <form action="includes/login.inc.php" method="post" novalidate>
 
-    <input type="submit" value="Login">
-  </form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" required>
+        </div>
 
-  <p>Don't have an account? <a href="signup.php">Sign up here</a></p>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required>
+        </div>
 
+        <input type="submit" value="Login">
+      </form>
+
+      <div class="form-footer">
+        <p>Don't have an account? <a href="signup.php">Sign up here</a></p>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer -->
   <?php require_once 'includes/footer.inc.php'; ?>
 
-  <?php
-  unset($_SESSION["errors_login"]);
-  ?>
+  <?php unset($_SESSION["errors_login"]); ?>
 
 </body>
 

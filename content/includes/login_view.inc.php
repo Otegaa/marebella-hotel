@@ -5,9 +5,11 @@ function displaySuccessMessage()
   if (!isset($_SESSION["registration_successful"])) {
     return;
   }
-  echo "<div>";
-  echo "<p>" . htmlspecialchars($_SESSION["registration_successful"]) . "</p>";
-  echo "</div>";
+  echo '<div class="success-box">';
+  echo '<p>' . htmlspecialchars($_SESSION["registration_successful"]) . '</p>';
+  echo '</div>';
+
+
 
   unset($_SESSION["registration_successful"]);
 }
