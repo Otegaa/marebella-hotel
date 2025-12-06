@@ -30,15 +30,3 @@ function displaySignupErrors()
   }
   echo "</div>";
 }
-
-function displaySuccessMessage()
-{
-  if (!isset($_SESSION["registration_successful"])) {
-    return;
-  }
-  echo "<div>";
-  echo "<p>" . htmlspecialchars($_SESSION["registration_successful"]) . "</p>";
-  echo "</div>";
-
-  unset($_SESSION["registration_successful"]);
-}

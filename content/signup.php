@@ -108,8 +108,9 @@ $signup_data = getSignupData();
 
 
   <!-- footer -->
-  <!-- <?php require_once 'includes/footer.inc.php' ?> -->
+  <?php require_once 'includes/footer.inc.php' ?>
 
+  <!-- unset -->
   <?php
   unset($_SESSION["errors_signup"]);
   unset($_SESSION["signup_data"]);
