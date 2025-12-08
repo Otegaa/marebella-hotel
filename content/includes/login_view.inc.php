@@ -29,3 +29,15 @@ function displayLoginErrors()
   }
   echo '</div>';
 }
+
+
+function displayNotLoggedInError()
+{
+  if (!isset($_SESSION["error_not_logged_in_book"])) {
+    return;
+  }
+
+  echo '<div class="error-box">';
+  echo '<p>• ' . htmlspecialchars($_SESSION["error_not_logged_in_book"]) . '</p>';
+  echo '</div>';
+}

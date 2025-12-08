@@ -2,6 +2,7 @@
 require_once 'includes/config_session.inc.php';
 require_once 'includes/signup_view.inc.php';
 
+// Get old signup data (for form repopulation)
 $signup_data = getSignupData();
 ?>
 
@@ -70,9 +71,9 @@ $signup_data = getSignupData();
           <input type="text"
             name="username"
             id="username"
-            class="<?php echo checkSignupErrors('username_taken') ? 'input-error' : ''; ?>"
+            class="<?php echo checkSignupErrors('username_taken') || checkSignupErrors('username_format') ? 'input-error' : ''; ?>"
             value="<?php
-                    if (!checkSignupErrors('username_taken')) {
+                    if (!checkSignupErrors('username_taken') || !checkSignupErrors('username_format')) {
                       echo htmlspecialchars($signup_data['username'] ?? '');
                     }
                     ?>">

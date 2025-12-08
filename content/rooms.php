@@ -53,6 +53,17 @@ try {
       <p>From cozy rooms to lavish suites, find your perfect stay</p>
     </section>
 
+    <?php
+    if (isset($_SESSION["error"])) {
+      echo '<div class="page-error">';
+      echo '<div class="error-box">';
+      echo '<p>' . htmlspecialchars($_SESSION["error"]) . '</p>';
+      echo '</div>';
+      echo '</div>';
+      unset($_SESSION["error"]);
+    }
+    ?>
+
     <!-- Room amenities section -->
     <section class="room-amenities">
       <div class="room-amenity">
@@ -151,75 +162,11 @@ try {
         </article>
       <?php endforeach; ?>
     </section>
-
-    <!-- Booking information -->
-    <section class="booking-info-container">
-      <h2>Booking Information</h2>
-      <div class="booking-info">
-        <div class="booking-info-group">
-          <h3>Check-in & check-out</h3>
-          <ul>
-            <li>Check-in: From 3:00 PM</li>
-            <li>Check-out: Until 12:00 PM</li>
-            <li>Early check-in available upon request</li>
-            <li>Express check-in for suite guests</li>
-          </ul>
-        </div>
-        <div class="booking-info-group">
-          <h3>Cancellation Policy</h3>
-          <ul>
-            <li>Free cancellation up to 7 days before arrival</li>
-            <li>50% charge for cancellations 3-7 days before</li>
-            <li>Full charge for cancellations within 3 days</li>
-            <li>Flexible rates available for extended stays</li>
-          </ul>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- footer -->
-  <footer>
-    <div class="footer-columns">
-      <div class="footer-column">
-        <h5>Quick links</h5>
-        <ul>
-          <li><a href="homepage.html" class="link">Home</a></li>
-          <li><a href="rooms.html" class="link">Rooms & Suites</a></li>
-          <li><a href="wireframes.html" class="link">WireFrames</a></li>
-          <li><a href="credits.html" class="link">Credits</a></li>
-        </ul>
-      </div>
+  <?php require_once 'includes/footer.inc.php'; ?>
 
-      <div class="footer-column">
-        <h5>Contact us</h5>
-        <address>
-          <a href="#" class="link">Tel : 69 8234675612</a>
-          <a href="#" class="link">info@marebella.gr</a>
-        </address>
-      </div>
-
-      <div class="footer-column">
-        <h5>Follow us</h5>
-        <div class="social-icons">
-          <a href="#" aria-label="Visit our Facebook page" class="social-icon"><i class="fa-brands fa-facebook" aria-hidden="true"></i></a>
-
-          <a
-            href="#"
-            aria-label="Visit our Instagram page"
-            class="social-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-
-          <a href="#" aria-label="Visit our Telegram page" class="social-icon"><i class="fa-brands fa-telegram" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <hr class="footer-divider" />
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 MareBella Santorini. All rights reserved.</p>
-    </div>
-  </footer>
 </body>
 
 </html>

@@ -48,6 +48,7 @@ if (isset($_SESSION['user_id'])) {
       <?php
       displayLoginErrors();
       displaySuccessMessage();
+      displayNotLoggedInError();
       ?>
 
       <form action="includes/login.inc.php" method="post" novalidate>
@@ -74,7 +75,10 @@ if (isset($_SESSION['user_id'])) {
   <!-- footer -->
   <?php require_once 'includes/footer.inc.php'; ?>
 
-  <?php unset($_SESSION["errors_login"]); ?>
+  <?php
+  unset($_SESSION["errors_login"]);
+  unset($_SESSION["error_not_logged_in_book"])
+  ?>
 
 </body>
 

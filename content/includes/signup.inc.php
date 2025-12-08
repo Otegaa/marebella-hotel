@@ -1,4 +1,8 @@
 <?php
+require_once 'config_session.inc.php';
+require_once 'dbh.inc.php';
+require_once 'signup_model.inc.php';
+require_once 'signup_contr.inc.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $firstname = trim($_POST["firstname"]);
@@ -7,14 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $email = trim($_POST["email"]);
   $username = trim($_POST["username"]);
   $password = $_POST["password"];
-  $phone = $_POST["phone"];
+  $phone = trim($_POST["phone"]);
 
   try {
-    require_once 'config_session.inc.php';
-    require_once 'dbh.inc.php';
-    require_once 'signup_model.inc.php';
-    require_once 'signup_contr.inc.php';
-
     // Form validation
     $errors = [];
 
@@ -28,6 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (isUsernameTaken($pdo, $username)) {
       $errors["username_taken"] = "Username already taken!";
+    }
+
+    if (isUsernameInvalidFormat($username)) {
+      $errors["username_format"] = "Username can only contain letters, numbers, - and _";
     }
 
     if (isEmailRegistered($pdo, $email)) {

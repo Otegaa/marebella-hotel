@@ -15,6 +15,11 @@ function isUsernameTaken($pdo, $username)
   return getUsername($pdo, $username) !== false;
 }
 
+function isUsernameInvalidFormat($username)
+{
+  return !preg_match('/^[a-zA-Z0-9_-]{3,20}$/', $username);
+}
+
 function isEmailRegistered($pdo, $email)
 {
   return getEmail($pdo, $email) !== false;

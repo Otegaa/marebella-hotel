@@ -23,7 +23,7 @@ try {
   $room = $stmt->fetch(PDO::FETCH_ASSOC);
 
   if (!$room) {
-    $_SESSION['not_found'] = "Room not found.";
+    $_SESSION['error'] = "Room not found.";
     header("Location: rooms.php");
     exit();
   }
