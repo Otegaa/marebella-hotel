@@ -4,24 +4,6 @@ require_once 'includes/dbh.inc.php';
 require_once 'includes/booking_model.inc.php';
 require_once 'includes/booking_view.inc.php';
 
-// // DEBUG SESSION
-// echo "<pre style='background:yellow; padding:20px;'>";
-// echo "=== SESSION DEBUG ===\n";
-// print_r($_SESSION);
-// echo "\n=== USER_ID SPECIFIC ===\n";
-// echo "user_id exists: " . (isset($_SESSION["user_id"]) ? "YES" : "NO") . "\n";
-// echo "user_id value: ";
-// var_dump($_SESSION["user_id"] ?? 'NOT SET');
-// echo "</pre>";
-
-// $customer_id = $_SESSION["user_id"];
-
-// echo "<pre style='background:lightblue; padding:20px;'>";
-// echo "customer_id value: ";
-// var_dump($customer_id);
-// echo "</pre>";
-// exit();
-
 if (!isset($_SESSION["user_id"])) {
   $_SESSION["redirect_after_login"] = "booking.php?room_id=" . $_GET["room_id"];
   $_SESSION["error_not_logged_in_book"] = "Please login to book a room.";
