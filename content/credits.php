@@ -68,6 +68,26 @@
             </p>
           </article>
 
+          <!-- Rooms Page Hero -->
+          <article class="credit-item">
+            <h3>Rooms Page Hero Image</h3>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@aalolens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Aalo Lens
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/luxurious-bedroom-with-modern-decor-and-large-windows-Xph_EJ-22vE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Unsplash
+              </a>
+              <span class="year">(2025)</span>
+            </p>
+          </article>
+
           <!-- Infinity Pool -->
           <article class="credit-item">
             <h3>Infinity Pool Vista</h3>
@@ -168,23 +188,203 @@
             </p>
           </article>
 
-          <!-- Rooms Page Hero -->
+          <!-- Executive Business Suite -->
           <article class="credit-item">
-            <h3>Rooms Page Hero Image</h3>
+            <h3>Executive Business Suite</h3>
             <p>
               Photo by
               <a
-                href="https://unsplash.com/@aalolens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                href="https://unsplash.com/@mawiswiss?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
                 target="_blank">
-                Aalo Lens
+                Marc Wieland
               </a>
               on
               <a
-                href="https://unsplash.com/photos/luxurious-bedroom-with-modern-decor-and-large-windows-Xph_EJ-22vE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                href="https://unsplash.com/photos/a-laptop-computer-sitting-on-top-of-a-wooden-desk-G4nKVjGDZn0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
                 target="_blank">
                 Unsplash
               </a>
-              <span class="year">(2025)</span>
+              <span class="year">(2022)</span>
+            </p>
+          </article>
+
+          <!-- Family Suite Connect -->
+          <article class="credit-item">
+            <h3>Family Suite Connect</h3>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@fromitaly?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Francesca Tosolini
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/white-bed-frame-hCU4fimRW-c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Unsplash
+              </a>
+              <span class="year">(2019)</span>
+            </p>
+          </article>
+
+          <!-- Deluxe Balcony Room -->
+          <article class="credit-item">
+            <h3>Deluxe Balcony Room</h3>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@shaipal?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Shai Pal
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/brown-wooden-table-and-chairs-near-sea-during-daytime-56WKMCORs-0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Unsplash
+              </a>
+              <span class="year">(2021)</span>
+            </p>
+          </article>
+
+          <!-- Honeymoon Caldera Suite -->
+          <article class="credit-item">
+            <h3>Honeymoon Caldera Suite</h3>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@ssahani123?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Sheela Sahani
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/a-bedroom-with-a-bed-and-a-ceiling-fan-vLi7J-dxnVc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Unsplash
+              </a>
+              <span class="year">(2021)</span>
+            </p>
+          </article>
+
+          <!-- Crown Penthouse -->
+          <article class="credit-item">
+            <h3>Crown Penthouse</h3>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@mostafasafadel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Mostafa Safadel
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/inside-condominium-unit-cHjAxnJk_wQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Unsplash
+              </a>
+              <span class="year">(2019)</span>
+            </p>
+          </article>
+
+          <!-- Luxury Presidential Suite -->
+          <article class="credit-item">
+            <h3>Luxury Presidential Suite</h3>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@3dartistmoradi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Ali Moradi
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/a-bedroom-with-a-large-bed-and-a-chair-vz9IbCAXHKQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Unsplash
+              </a>
+              <span class="year">(2022)</span>
+            </p>
+          </article>
+
+          <!-- Cozy Garden View Room -->
+          <article class="credit-item">
+            <h3>Cozy Garden View Room</h3>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@fromitaly?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Francesca Tosolini
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/bed-with-comforter-set-beside-table-lamps-on-nightstands-Sh22mtTd2GA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Unsplash
+              </a>
+              <span class="year">(2019)</span>
+            </p>
+          </article>
+
+          <!-- Jacuzzi Junior Suite -->
+          <article class="credit-item">
+            <h3>Jacuzzi Junior Suite</h3>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@anwar_hakim?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target=" _blank">
+                Anwar Hakim
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/a-bedroom-with-a-large-bed-and-a-flat-screen-tv-jVOaY6Zf58c?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Unsplash
+              </a>
+              <span class="year">(2022)</span>
+            </p>
+          </article>
+
+          <!-- Romantic Sunset Villa -->
+          <article class="credit-item">
+            <h3>Romantic Sunset Villa</h3>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@reisetopia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target=" _blank">
+                reisetopia
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/white-bed-near-brown-window-curtain-Y7WfCuz5tn0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Unsplash
+              </a>
+              <span class="year">(2020)</span>
+            </p>
+          </article>
+
+          <!-- Budget Single Room -->
+          <article class="credit-item">
+            <h3>Budget Single Room</h3>
+            <p>
+              Photo by
+              <a
+                href="https://unsplash.com/@vohoangchuong82?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target=" _blank">
+                Dylan Vo
+              </a>
+              on
+              <a
+                href="https://unsplash.com/photos/macbook-pro-on-brown-wooden-table-eqo9oHrcCl8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                target="_blank">
+                Unsplash
+              </a>
+              <span class="year">(2020)</span>
             </p>
           </article>
         </div>
