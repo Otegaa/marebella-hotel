@@ -9,11 +9,8 @@ function displaySuccessMessage()
   echo '<p>' . htmlspecialchars($_SESSION["registration_successful"]) . '</p>';
   echo '</div>';
 
-
-
   unset($_SESSION["registration_successful"]);
 }
-
 
 function displayLoginErrors()
 {
@@ -30,7 +27,6 @@ function displayLoginErrors()
   echo '</div>';
 }
 
-
 function displayNotLoggedInError()
 {
   if (!isset($_SESSION["error_not_logged_in_book"])) {
@@ -39,5 +35,27 @@ function displayNotLoggedInError()
 
   echo '<div class="error-box">';
   echo '<p>• ' . htmlspecialchars($_SESSION["error_not_logged_in_book"]) . '</p>';
+  echo '</div>';
+}
+
+function displayMyBookingsError()
+{
+  if (!isset($_SESSION["error_my_bookings"])) {
+    return;
+  }
+
+  echo '<div class="error-box">';
+  echo '<p>• ' . htmlspecialchars($_SESSION["error_my_bookings"]) . '</p>';
+  echo '</div>';
+}
+
+function displayCancelBookingError()
+{
+  if (!isset($_SESSION["error_cancel_booking"])) {
+    return;
+  }
+
+  echo '<div class="error-box">';
+  echo '<p>• ' . htmlspecialchars($_SESSION["error_cancel_booking"]) . '</p>';
   echo '</div>';
 }

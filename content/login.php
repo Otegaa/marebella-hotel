@@ -46,9 +46,11 @@ if (isset($_SESSION['user_id'])) {
       <h2>Login</h2>
 
       <?php
-      displayLoginErrors();
-      displaySuccessMessage();
       displayNotLoggedInError();
+      displaySuccessMessage();
+      displayLoginErrors();
+      displayMyBookingsError();
+      displayCancelBookingError();
       ?>
 
       <form action="includes/login.inc.php" method="post" novalidate>
@@ -77,7 +79,7 @@ if (isset($_SESSION['user_id'])) {
 
   <?php
   unset($_SESSION["errors_login"]);
-  unset($_SESSION["error_not_logged_in_book"])
+  unset($_SESSION["error_not_logged_in_book"]);
   ?>
 
 </body>

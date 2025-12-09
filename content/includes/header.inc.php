@@ -4,7 +4,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
 
 <header>
   <nav>
-    <a href="../homepage.php" class="title-container">
+    <a href="homepage.php" class="title-container">
       <img src="../assets/images/Logo-Main.png" alt="MareBella logo" class="logo-img" />
       <span class="logo-name">MareBella</span>
     </a>

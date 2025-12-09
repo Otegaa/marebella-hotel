@@ -40,3 +40,14 @@ function displayBookingSuccess()
   echo '<p>' . htmlspecialchars($_SESSION["booking_success"]) . '</p>';
   echo '</div>';
 }
+
+function displayCancelBookingError()
+{
+  if (!isset($_SESSION["error_cancel_booking"])) {
+    return;
+  }
+
+  echo '<div class="error-box">';
+  echo '<p>• ' . htmlspecialchars($_SESSION["error_cancel_booking"]) . '</p>';
+  echo '</div>';
+}
