@@ -582,7 +582,7 @@ footer {
   color: #9ca3af;
 }
 
-/* Rooms page */
+/* ROOMS PAGE */
 .room-amenities {
   background-color: #ffffff;
   padding: 4rem 6rem;
@@ -607,6 +607,236 @@ footer {
 .room-amenity span {
   font-weight: 500;
 }
+
+/* Search and filter */
+.search-filter-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-filter-container h2 {
+  font-size: 1.8rem;
+  color: #1f2937;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.search-group {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-group label,
+.filter-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.search-group input,
+.filter-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #1f2937;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.search-group input:focus,
+.filter-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-group input::placeholder {
+  color: #9ca3af;
+}
+
+/* Search Button */
+.btn-search {
+  padding: 12px 24px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  align-self: end;
+}
+
+.btn-search:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-search:active {
+  transform: translateY(0);
+}
+
+.btn-search i {
+  font-size: 1rem;
+}
+
+/* Clear Button for Search */
+.btn-clear {
+  padding: 12px 24px;
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  align-self: end;
+}
+
+.btn-clear:hover {
+  background: #d1d5db;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-clear:active {
+  transform: translateY(0);
+}
+
+.search-results-info {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f9fafb;
+  border-left: 4px solid #2563eb;
+  border-radius: 6px;
+  color: #374151;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* No Results Search */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.no-results i {
+  font-size: 4rem;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.no-results h3 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.no-results p {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.no-results .btn-clear {
+  display: inline-flex;
+  margin-top: 10px;
+}
+
+/* Mobile design for search */
+
+@media (max-width: 768px) {
+  .search-filter-container {
+    padding: 20px;
+    margin: 30px 15px;
+  }
+
+  .search-filter-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .search-group {
+    grid-column: 1;
+  }
+
+  .btn-search,
+  .btn-clear {
+    width: 100%;
+    padding: 14px 24px;
+  }
+
+  .search-results-info {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .no-results {
+    padding: 40px 20px;
+  }
+
+  .no-results i {
+    font-size: 3rem;
+  }
+
+  .no-results h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Search highlight */
+mark {
+  color: #1e40af;
+  border-bottom: 2px solid #2563eb;
+  background-color: transparent;
+}
+
+/* Rooms container */
 
 .room-cards-container {
   display: flex;
