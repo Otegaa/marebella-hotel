@@ -156,69 +156,110 @@ nav {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Mobile nav styling */
-
+/* HAMBURGER BUTTON */
 .hamburger {
   display: none;
-  visibility: hidden;
   background: none;
   border: none;
-  padding: 0.5rem;
-  color: #1f2937;
-  font-size: 2.4rem;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  color: #333;
+  font-size: 1.5rem;
 }
 
+.hamburger i {
+  transition: transform 0.3s ease;
+}
+
+.hamburger.active i::before {
+  content: '\f00d'; /* for closing the menu */
+}
+
+/* Mobile Menu */
 .mobile-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  z-index: 99;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  overflow-y: auto;
 }
 
-.mobile-menu[aria-hidden='false'] {
-  display: block;
+.mobile-menu.active {
+  right: 0;
 }
 
 .mobile-menu ul {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  padding: 80px 0 20px 0;
+  margin: 0;
 }
 
-.mobile-menu a {
+.mobile-menu ul li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-menu ul li a {
   display: block;
-  padding: 1.2rem;
-  font-size: 1.6rem;
-  color: #1f2937;
+  padding: 15px 25px;
+  color: #333;
   text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-/* Overlay for the menu btn */
+.mobile-menu ul li a:hover {
+  background: #f8f9fa;
+  color: #2563eb;
+  padding-left: 35px;
+}
+
+/* Book Now button in mobile menu */
+.btn-book-mobile {
+  display: inline-block !important;
+  margin: 20px 25px !important;
+  padding: 12px 24px !important;
+  background: #2563eb !important;
+  color: white !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+}
+
+.btn-book-mobile:hover {
+  background: #1d4ed8 !important;
+  padding-left: 24px !important;
+}
+
+/* Overlay */
 .mobile-menu-overlay {
-  display: none;
   position: fixed;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 98;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
 }
 
-.mobile-menu-overlay[aria-hidden='false'] {
-  display: block;
+.mobile-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Hero */
+body.menu-open {
+  overflow: hidden;
+}
 
+/* HERO */
 .hero-section-container {
   background-image: linear-gradient(
       135deg,
@@ -299,7 +340,7 @@ nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Introduction */
+/* INTRODUCTION */
 .introduction-container {
   padding: 6rem 4rem;
   background-color: #ffffff;
@@ -323,7 +364,7 @@ nav {
   padding: 0 2rem;
 }
 
-/* Amenities */
+/* AMENITIES */
 .amenities-container {
   padding: 6rem 10rem;
   background-color: #f9fafb;
@@ -492,7 +533,7 @@ nav {
   transform: translateY(0);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   padding: 6rem 4rem 3rem;
   background-color: #1f2937;
@@ -1232,7 +1273,7 @@ mark {
   }
 }
 
-/* Wireframes page */
+/* WIREFRAMES PAGE */
 .wireframes-container {
   padding: 4rem;
   background-color: #ffffff;
@@ -1382,7 +1423,7 @@ mark {
   }
 }
 
-/* Credits page */
+/* CREDITS PAGE */
 .credits-container {
   padding: 6rem 4rem;
   background-color: #ffffff;
@@ -1519,7 +1560,7 @@ mark {
   }
 }
 
-/* Forms - Login and Signup */
+/* FORMS - LOGIN AND SIGNUP */
 .form-container {
   max-width: 50rem;
   margin: 8rem auto 6rem;
@@ -1761,7 +1802,7 @@ input[type='submit']:active,
   }
 }
 
-/* Room-details */
+/* ROOM DETAILS */
 .breadcrumb {
   background-color: #f9fafb;
   padding: 2rem 4rem;

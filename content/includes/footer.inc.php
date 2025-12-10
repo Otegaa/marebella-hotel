@@ -51,3 +51,6 @@
      <p>&copy; <?php echo date('Y'); ?> MareBella Santorini. All rights reserved.</p>
    </div>
  </footer>
+
+ <!-- Hamburger JS -->
+ <script src="../assets/scripts/hamburger.js"></script>
