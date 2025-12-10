@@ -94,11 +94,17 @@ $signup_data = getSignupData();
 
         <div class="form-group">
           <label for="password">Password<span class="required">*</span></label>
-          <input type="password"
-            name="password"
-            id="password"
-            class="<?php echo checkSignupErrors('password_bad') ? 'input-error' : ''; ?>"
-            placeholder="Minimum 8 characters">
+          <div class="password-wrapper">
+            <input type="password"
+              name="password"
+              id="password"
+              class="<?php echo checkSignupErrors('password_bad') ? 'input-error' : ''; ?>"
+              placeholder="Minimum 8 characters"
+              required>
+            <button type="button" class="toggle-password" aria-label="Show password">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
           <span class="form-helper">Use at least 8 characters</span>
         </div>
 
@@ -147,6 +153,8 @@ $signup_data = getSignupData();
   unset($_SESSION["errors_signup"]);
   unset($_SESSION["signup_data"]);
   ?>
+
+  <script src="../assets/scripts/togglePassword.js"></script>
 </body>
 
 </html>

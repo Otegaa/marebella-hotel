@@ -62,7 +62,16 @@ if (isset($_SESSION['user_id'])) {
 
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" name="password" id="password" required>
+          <div class="password-wrapper">
+            <input type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+              required>
+            <button type="button" class="toggle-password" aria-label="Show password">
+              <i class="fa-solid fa-eye"></i>
+            </button>
+          </div>
         </div>
 
         <input type="submit" value="Login">
@@ -81,7 +90,7 @@ if (isset($_SESSION['user_id'])) {
   unset($_SESSION["errors_login"]);
   unset($_SESSION["error_not_logged_in_book"]);
   ?>
-
+  <script src="../assets/scripts/togglePassword.js"></script>
 </body>
 
 </html>
